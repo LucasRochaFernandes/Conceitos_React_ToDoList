@@ -64,7 +64,7 @@ export function TaskList() {
           {tasks.map((task) => (
             <li key={task.id}>
               <div
-                className={task.isComplete ? "completed" : "pendent"}
+                className={task.isComplete ? "completed" : ""}
                 data-testid="task"
               >
                 <label className="checkbox-container">

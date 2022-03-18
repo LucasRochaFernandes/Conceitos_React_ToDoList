@@ -17,24 +17,25 @@ export function TaskList() {
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
     if (newTaskTitle) {
-      const id = Math.floor(Math.random() * 100);
+      const id = Math.random() * 200;
 
       setTasks([...tasks, { id, title: newTaskTitle, isComplete: false }]);
+    } else {
+      alert("Valor inválido");
     }
   }
 
   function handleToggleTaskCompletion(id: number) {
-    tasks.map((task) => {
-      if (task.id === id) task.isComplete = true;
-    });
-    setTasks(tasks);
+    const taskIndex = tasks.findIndex((task) => task.id === id);
+    const auxListTasks = tasks.filter((task) => task);
+    auxListTasks[taskIndex].isComplete = true;
+    setTasks(auxListTasks);
   }
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
-    const taskIndex = tasks.findIndex((task) => task.id === id);
-    tasks.splice(taskIndex, 1);
-    setTasks(tasks);
+    const remainingTasks = tasks.filter((task) => task.id !== id);
+    setTasks(remainingTasks);
   }
 
   return (

@@ -1,2 +1,2 @@
-## Description
-- This project is a challenge, made by the education platform Rocketseat, that tests the basics of React
+### Description
+This project is a challenge, made by the education platform [Rocketseat](https://www.rocketseat.com.br/), which practices the basic concepts of React through Jest tests
